@@ -23,7 +23,7 @@ form.addEventListener('submit', async (e) => {
 
     try {
         const userId = window.location.pathname.split('/').pop(); // Extract userId from URL
-        const response = await fetch('https://thick-berries-smoke.loca.lt/validate', {
+        const response = await fetch('https://902d-197-211-59-100.ngrok-free.app/validate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
