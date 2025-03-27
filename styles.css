@@ -7,6 +7,19 @@ body {
     text-align: center;
     background: linear-gradient(to bottom, #001f3f, #001a33);
     overflow: hidden;
+    animation: nebula 10s infinite alternate;
+}
+
+@keyframes nebula {
+    0% {
+        background: linear-gradient(to bottom, #001f3f, #001a33);
+    }
+    50% {
+        background: linear-gradient(to bottom, #00264d, #001f3f);
+    }
+    100% {
+        background: linear-gradient(to bottom, #001a33, #001f3f);
+    }
 }
 
 /* Starry background effect */
@@ -48,6 +61,7 @@ body {
     margin: 100px auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1); /* Transparent white for contrast */
+    backdrop-filter: blur(10px); /* Glass effect */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1.5s ease-in-out;
@@ -71,14 +85,16 @@ p {
 }
 
 input {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
+    width: 90%;
+    padding: 12px 19px; /* Add space for the icon */
+    font-size: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
     transition: border-color 0.3s ease;
+    background: url('Techitoon_Bot_Icon.jpg') no-repeat 10px center; /* Replace with your icon */
+    background-size: 20px;
 }
 
 input:focus {
@@ -90,15 +106,16 @@ button {
     padding: 12px;
     font-size: 16px;
     color: #fff;
-    background-color: #0074D9; /* Bright blue button */
+    background: linear-gradient(45deg, #0074D9, #0056a3);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056a3; /* Darker blue on hover */
+    background: linear-gradient(45deg, #0056a3, #003f7f);
+    transform: scale(1.05);
 }
 
 #qrCodeContainer img {
@@ -121,9 +138,19 @@ button:hover {
 }
 
 .loading {
-    font-size: 14px;
-    color: #FFDC00; /* Yellow for loading */
-    margin-top: 20px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #FFDC00;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 footer {
@@ -132,15 +159,24 @@ footer {
     color: #bbb;
 }
 
-
-
-
-
-
-
 .logo {
     display: block;
     margin: 0 auto;
     max-width: 150px; /* Adjust size as needed */
     height: auto;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 50px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
 }
