@@ -87,7 +87,9 @@ p {
 input {
     width: 90%;
     padding: 12px 19px; /* Add space for the icon */
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: bolder;
+    font-style: normal;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -95,10 +97,11 @@ input {
     transition: border-color 0.3s ease;
     background: url('Techitoon_Bot_Icon.jpg') no-repeat 10px center; /* Replace with your icon */
     background-size: 20px;
+    color: #fff;
 }
 
 input:focus {
-    border-color: #0074D9;
+    border-color: #b4bac0;
 }
 
 button {
