@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHITOON BOT Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div> <!-- Starry background -->
+    <div class="container">
+        <!-- Add the logo here -->
+        <img src="background2.jpg" alt="Techitoon Logo" class="logo">
+        <h1>TECHITOON BOT Registration</h1>
+        <p>Enter your phone number to register and start using the TECHITOON BOT.</p>
+        <form id="registerForm">
+            <input type="text" id="phoneNumber" placeholder="Enter your phone number (e.g., 2348012345678)" required />
+            <button type="submit">Register</button>
+        </form>
+        <div id="qrCodeContainer"></div>
+        <p id="successMessage"></p>
+        <p id="errorMessage"></p>
+        <p class="loading" id="loadingMessage" style="display: none;">Generating QR Code... Please wait.</p>
+    </div>
+    <footer>
+        <p>© 2025 TECHITOON BOT. Created by Lash Man.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
