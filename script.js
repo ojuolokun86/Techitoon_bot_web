@@ -25,8 +25,11 @@ form.addEventListener('submit', async (e) => {
         const userId = window.location.pathname.split('/').pop(); // Extract userId from URL
         const response = await fetch('https://3bfc-197-211-59-100.ngrok-free.app/validate', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId, phoneNumber }),
+            headers: {
+                'ngrok-skip-browser-warning': 'true', // Add this header
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId, phoneNumber }), // Send JSON data
         });
 
         const data = await response.json();
@@ -35,7 +38,7 @@ form.addEventListener('submit', async (e) => {
             qrCodeContainer.innerHTML = `<img src="${data.qrCode}" alt="QR Code" />`;
             successMessage.textContent = '🎉 Registration successful! You can now use the TECHITOON BOT.';
         } else {
-            errorMessage.textContent = data.message;
+            errorMessage.textContent = data.message || 'An error occurred.';
         }
     } catch (error) {
         console.error('Error during registration:', error);
